@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #8ecae6, #219ebc, #023047, #219ebc, #8ecae6);
+    color: #fff;
+}
+
+h1 {
+    color: white;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 63%;
+    height: 100%;
+    background-color: #023047;
+    z-index: -1;
+}
+
+.rectangle {
+    max-width: 800px;
+    max-height: 800px; 
+    padding: 20px; 
+}

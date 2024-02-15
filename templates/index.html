@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        h1 {
+            text-align: center;
+            margin-top: -350px;
+            margin-right: -300px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Top 10 Songs</h1>
+    <div class="background"></div>
+    <div class="rectangle">
+        <form method="post">
+            <label for="artist">Enter Artist Name:</label>
+            <input type="text" id="artist" name="artist" required>
+            <button type="submit">Submit</button>
+        </form>
+        {% if artist_name %}
+            {% if songs %}
+                <h2>Songs for {{ artist_name }}</h2>
+                <ul>
+                    {% for song in songs %}
+                        <li>{{ song['name'] }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No songs found for {{ artist_name }}</p>
+            {% endif %}
+        {% else %}
+            {% if error %}
+                <p>{{ error }}</p>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
